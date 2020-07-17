@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row pad-left-right">
+      <span class="pull-left title">Commands</span>
+      <a class="btn btn-success pull-right" routerLink="/commands/new">Add Command</a>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="center-panel">
+      <div class="row">
+        <div class="col-xs-12">
+            <app-command-item 
+            *ngFor="let command of commands" 
+            [command]="command">
+          </app-command-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

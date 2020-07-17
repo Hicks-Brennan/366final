@@ -1,0 +1,61 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <form id="command-edit" #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="row">
+
+        <div class="col-sm-12 form-group">
+          <label for="name">Command title</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [ngModel]="command?.name"
+            #name="ngModel"
+            class="form-control"
+            size="120"
+            max="120"
+            required>
+        </div>
+
+        <div class="col-sm-12 form-group">
+          <label for="description">Command description</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            [ngModel]="command?.description"
+            class="form-control"
+            size="120"
+            max="255">
+        </div>
+
+        <!-- <div class="col-sm-12 form-group">
+          <label for="commandDifficulty">Command Difficulty</label>
+          <input
+            type="text"
+            id="commandDifficulty"
+            name="url"
+            [ngModel]="command?.difficulty"
+            class="form-control"
+            size="150"
+            max="255">
+        </div> -->
+      </div>
+
+      <div *ngIf="!f.valid" class="alert alert-danger">
+        The Command title is a required field.
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
+          <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
